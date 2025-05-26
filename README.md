@@ -1,48 +1,39 @@
-Overview
-========
+# 🛒 Retail Data Engineering Project Portfolio
+## 📌 Summary
+This project demonstrates a complete data engineering pipeline built to process, model, and visualize retail transaction data. It showcases industry-standard practices for building scalable and maintainable data systems, turning raw transactional data into actionable business intelligence reports.
+## Data Pipeline 
+![DE-Retail-2](https://github.com/user-attachments/assets/ca9f2ced-a9b4-4b21-8880-be7578b3f3a8)
 
-Welcome to Astronomer! This project was generated after you ran 'astro dev init' using the Astronomer CLI. This readme describes the contents of the project, as well as how to run Apache Airflow on your local machine.
 
-Project Contents
-================
+## 📦 Data Source
+The dataset used in this project is the Online Retail Dataset available on Kaggle:
+🔗 https://www.kaggle.com/datasets/tunguz/online-retail
+This dataset contains transactional data for a UK-based online retail store, including invoice numbers, product codes, quantities, prices, and timestamps.
 
-Your Astro project contains the following files and folders:
+## 🧱 Data Model
+![DE-Retail-3](https://github.com/user-attachments/assets/c0917094-2f28-4101-9f8a-6648e2a6c599)
+The data model follows a traditional star schema optimized for analytical queries:
+1. Fact Table:
+* fact_transactions – contains all transactional-level data (InvoiceNo, Date, Quantity, TotalAmount)
+2. Dimension Tables:
+* dim_customer – customer information
+* dim_product – product details
+* dim_date – date dimension for time-based analytics
 
-- dags: This folder contains the Python files for your Airflow DAGs. By default, this directory includes one example DAG:
-    - `example_astronauts`: This DAG shows a simple ETL pipeline example that queries the list of astronauts currently in space from the Open Notify API and prints a statement for each astronaut. The DAG uses the TaskFlow API to define tasks in Python, and dynamic task mapping to dynamically print a statement for each astronaut. For more on how this DAG works, see our [Getting started tutorial](https://www.astronomer.io/docs/learn/get-started-with-airflow).
-- Dockerfile: This file contains a versioned Astro Runtime Docker image that provides a differentiated Airflow experience. If you want to execute other commands or overrides at runtime, specify them here.
-- include: This folder contains any additional files that you want to include as part of your project. It is empty by default.
-- packages.txt: Install OS-level packages needed for your project by adding them to this file. It is empty by default.
-- requirements.txt: Install Python packages needed for your project by adding them to this file. It is empty by default.
-- plugins: Add custom or community plugins for your project to this file. It is empty by default.
-- airflow_settings.yaml: Use this local-only file to specify Airflow Connections, Variables, and Pools instead of entering them in the Airflow UI as you develop DAGs in this project.
+## 🛠 Technology Stack
+| Tool         | Purpose                                  |
+| ------------ | ---------------------------------------- |
+| **Airflow**  | Workflow orchestration for ETL pipelines |
+| **BigQuery** | Cloud data warehouse for storage & query |
+| **DBT**      | Data transformation and modeling         |
+| **Soda**     | Data quality testing                     |
+| **Metabase** | Dashboarding and reporting               |
+| **Docker**   | Containerization for reproducible setups |
 
-Deploy Your Project Locally
-===========================
+## 📊 Final Result
+The project produces a comprehensive retail sales report delivered via interactive dashboards in Metabase, including KPIs such as:
+* Total 10 Product by Quantity
+* Total Revenue per Month
+* Primary Markets
 
-1. Start Airflow on your local machine by running 'astro dev start'.
-
-This command will spin up 4 Docker containers on your machine, each for a different Airflow component:
-
-- Postgres: Airflow's Metadata Database
-- Webserver: The Airflow component responsible for rendering the Airflow UI
-- Scheduler: The Airflow component responsible for monitoring and triggering tasks
-- Triggerer: The Airflow component responsible for triggering deferred tasks
-
-2. Verify that all 4 Docker containers were created by running 'docker ps'.
-
-Note: Running 'astro dev start' will start your project with the Airflow Webserver exposed at port 8080 and Postgres exposed at port 5432. If you already have either of those ports allocated, you can either [stop your existing Docker containers or change the port](https://www.astronomer.io/docs/astro/cli/troubleshoot-locally#ports-are-not-available-for-my-local-airflow-webserver).
-
-3. Access the Airflow UI for your local Airflow project. To do so, go to http://localhost:8080/ and log in with 'admin' for both your Username and Password.
-
-You should also be able to access your Postgres Database at 'localhost:5432/postgres'.
-
-Deploy Your Project to Astronomer
-=================================
-
-If you have an Astronomer account, pushing code to a Deployment on Astronomer is simple. For deploying instructions, refer to Astronomer documentation: https://www.astronomer.io/docs/astro/deploy-code/
-
-Contact
-=======
-
-The Astronomer CLI is maintained with love by the Astronomer team. To report a bug or suggest a change, reach out to our support.
+![Uploading DE-Retail-1.png…]()
