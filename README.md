@@ -36,5 +36,6 @@ The project produces a comprehensive retail sales report delivered via interacti
 * Total Revenue per Month
 * Primary Markets
 
-![Uploading DE-Retail-1.png…]()
+![DE-Retail-1](https://github.com/user-attachments/assets/85ea862b-fae7-414d-b5d9-18e213d4e83c)
+
 
