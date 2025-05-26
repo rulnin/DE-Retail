@@ -1,0 +1,15 @@
+data_source retail:
+  type: bigquery
+  connection:
+    account_info_json_path: /usr/local/airflow/include/gcp/service_account.json
+    auth_scopes:
+    - https://www.googleapis.com/auth/bigquery
+    - https://www.googleapis.com/auth/cloud-platform
+    - https://www.googleapis.com/auth/drive
+    project_id: 'de-airflow1'
+    dataset: retail
+    
+soda_cloud:
+  host: cloud.us.soda.io
+  api_key_id: 51817ab7-9241-418a-bbd6-f0f3e3efb121
+  api_key_secret: hoPXnxhHEeiWThrx4RY-7OZviaDS5km6iz0IFl47CsN8o4V17vH7Pg
