@@ -14,7 +14,7 @@ This dataset contains transactional data for a UK-based online retail store, inc
 ![DE-Retail-3](https://github.com/user-attachments/assets/c0917094-2f28-4101-9f8a-6648e2a6c599)
 The data model follows a traditional star schema optimized for analytical queries:
 1. Fact Table:
-* fact_transactions – contains all transactional-level data (InvoiceNo, Date, Quantity, TotalAmount)
+* fact_invoices – contains all transactional-level data (InvoiceNo, Date, Quantity, TotalAmount)
 2. Dimension Tables:
 * dim_customer – customer information
 * dim_product – product details
